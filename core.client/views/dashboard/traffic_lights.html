@@ -1,0 +1,196 @@
+<div ng-controller="trafficLightsCtrl" id="traffic-lights">
+  <div class="header">
+    <h3>Measure where you are in your <strong>Company’s Lifecycle</strong>?</h3>
+    <p>Do people care about your product? The indicators below can help you identify whether you are reaching the right audience with the right product. The threshholds for the color codes green (success), yellow (work in progress) and red (not successful) are based on inflections points. We analyzed each respective metric within your peer group over time and identified inflection points that indicate wether you reached Problem/Solution fit and/or Product/Market fit.</p>
+  </div>
+  <div class="legend">
+    <span class="item"><div class="square green"></div>Reached basic Threshold</span>
+    <span class="item"><div class="square yellow"></div>Close to basic Threshold</span>
+    <span class="item"><div class="square red"></div>Below basic Threshold</span>
+    <span class="item"><div class="square grey"></div>No data</span>
+  </div>
+
+
+  <div class="section">
+    <div class="row">
+      <div class="row col-md-7 col-sm-12">
+        <div class="col-sm-6 col-xs-12 section-desc">
+          <h4>Problem/Solution Fit</h4>
+          <p>Do People like the promise of your value proposition</p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div class="metric-indicator" ng-class="bounce_rate.tier">
+            <p ng-bind="bounce_rate.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate.tier == 'notDefined'">{{bounce_rate.value}} {{bounce_rate.unit}}</span>
+            <span ng-show="bounce_rate.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12 section-info">
+        <p>The bounce rate is a measure of how much visitors engage with your website. You may improve it by refining your marketing strategy to drive more relevant visitors or by improving your landing pages to make them more engaging.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <div class="row col-md-7 col-sm-12">
+        <div class="col-sm-6 col-xs-12 section-desc">
+          <h4>Product/Market Fit</h4>
+          <p>Are people hooked on your product</p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div class="metric-indicator hoverable" ng-class="avg_time_on_site.tier" ng-mouseover="focusOn('avg_time_on_site')">
+            <p ng-bind="avg_time_on_site.name"></p>
+            <span class="metric-value" ng-hide="avg_time_on_site.tier == 'notDefined'">{{avg_time_on_site.value}} {{avg_time_on_site.unit}}</span>
+            <span ng-show="avg_time_on_site.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="avg_time_on_site.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="avg_time_on_site.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div class="metric-indicator hoverable" ng-class="pages_per_visit.tier" ng-mouseover="focusOn('pages_per_visit')">
+            <p ng-bind="pages_per_visit.name"></p>
+            <span class="metric-value" ng-hide="pages_per_visit.tier == 'notDefined'">{{pages_per_visit.value}} {{pages_per_visit.unit}}</span>
+            <span ng-show="pages_per_visit.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="pages_per_visit.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="pages_per_visit.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div class="metric-indicator hoverable" ng-class="returning_visitors.tier" ng-mouseover="focusOn('returning_visitors')">
+            <p ng-bind="returning_visitors.name"></p>
+            <span class="metric-value" ng-hide="returning_visitors.tier == 'notDefined'">{{returning_visitors.value}} {{returning_visitors.unit}}</span>
+            <span ng-show="returning_visitors.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="returning_visitors.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="returning_visitors.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12 section-info">
+        <div ng-show="focusMetric == 'avg_time_on_site' ">
+          <p>Time on site is an indicator for whether your users like your product. It can help you identify whether you are reaching the right audience with the right product.</p>
+        </div>
+        <div ng-show="focusMetric == 'pages_per_visit' ">
+          <p>More pages viewed means more chances to engage with your user. Let them learn more about your product by offering more content.</p>
+        </div>
+        <div ng-show="focusMetric == 'returning_visitors' ">
+          <p>Having a low rate of returning visitors means you have to pay for most new visits and and prevents you from increasing your user lifetime value. Make visitors return and they'll be much more valuable to your business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <div class="row col-md-7 col-sm-12">
+        <div class="col-sm-6 col-xs-12 section-desc">
+          <h4>Product Efficiency</h4>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div class="metric-indicator" ng-class="avg_time_page_load.tier">
+            <p ng-bind="avg_time_page_load.name"></p>
+            <span class="metric-value" ng-hide="avg_time_page_load.tier == 'notDefined'">{{avg_time_page_load.value}} {{avg_time_page_load.unit}}</span>
+            <span ng-show="avg_time_page_load.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="avg_time_page_load.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="avg_time_page_load.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12 section-info">
+        <p>High page latency means your pages load slowly. Users are used to faster internet speeds and they don't tolerate slow websites: other options are always one click away. High latency is a technical issue that leads to higher bounce rates and lower conversion rates - and that is lost money.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" ng-if="bounce_rate_direct_new.tier != 'notDefined' || bounce_rate_display_new.tier != 'notDefined' || bounce_rate_paid_new.tier != 'notDefined' || bounce_rate_organic_new.tier != 'notDefined' || bounce_rate_email_new.tier != 'notDefined' || bounce_rate_referral_new.tier != 'notDefined' || bounce_rate_social_new.tier != 'notDefined'" >
+    <div class="row">
+      <div class="row col-md-7 col-sm-12">
+        <div class="col-sm-6 col-xs-12 section-desc">
+          <h4>Customer Acquisition Efficiency</h4>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div ng-if="bounce_rate_direct_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_direct_new.tier" ng-mouseover="focusOn('bounce_rate_direct_new')">
+            <p ng-bind="bounce_rate_direct_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_direct_new.tier == 'notDefined'">{{bounce_rate_direct_new.value}} {{bounce_rate_direct_new.unit}}</span>
+            <span ng-show="bounce_rate_direct_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_direct_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_direct_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_display_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_display_new.tier" ng-mouseover="focusOn('bounce_rate_display_new')">
+            <p ng-bind="bounce_rate_display_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_display_new.tier == 'notDefined'">{{bounce_rate_display_new.value}} {{bounce_rate_display_new.unit}}</span>
+            <span ng-show="bounce_rate_display_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_display_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_display_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_paid_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_paid_new.tier" ng-mouseover="focusOn('bounce_rate_paid_new')">
+            <p ng-bind="bounce_rate_paid_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_paid_new.tier == 'notDefined'">{{bounce_rate_paid_new.value}} {{bounce_rate_paid_new.unit}}</span>
+            <span ng-show="bounce_rate_paid_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_paid_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_paid_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_organic_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_organic_new.tier" ng-mouseover="focusOn('bounce_rate_organic_new')">
+            <p ng-bind="bounce_rate_organic_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_organic_new.tier == 'notDefined'">{{bounce_rate_organic_new.value}} {{bounce_rate_organic_new.unit}}</span>
+            <span ng-show="bounce_rate_organic_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_organic_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_organic_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_email_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_email_new.tier" ng-mouseover="focusOn('bounce_rate_email_new')">
+            <p ng-bind="bounce_rate_email_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_email_new.tier == 'notDefined'">{{bounce_rate_email_new.value}} {{bounce_rate_email_new.unit}}</span>
+            <span ng-show="bounce_rate_email_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_email_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_email_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_referral_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_referral_new.tier" ng-mouseover="focusOn('bounce_rate_referral_new')">
+            <p ng-bind="bounce_rate_referral_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_referral_new.tier == 'notDefined'">{{bounce_rate_referral_new.value}} {{bounce_rate_referral_new.unit}}</span>
+            <span ng-show="bounce_rate_referral_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_referral_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_referral_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+
+          <div ng-if="bounce_rate_social_new.tier != 'notDefined'" class="metric-indicator hoverable" ng-class="bounce_rate_social_new.tier" ng-mouseover="focusOn('bounce_rate_social_new')">
+            <p ng-bind="bounce_rate_social_new.name"></p>
+            <span class="metric-value" ng-hide="bounce_rate_social_new.tier == 'notDefined'">{{bounce_rate_social_new.value}} {{bounce_rate_social_new.unit}}</span>
+            <span ng-show="bounce_rate_social_new.delta == 'up'"><i class="fa fa-caret-up"></i></span>
+            <span ng-show="bounce_rate_social_new.delta == 'down'"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="bounce_rate_social_new.tier == 'notDefined'" class="info"><i class="fa fa-info"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12 section-info">
+        <div ng-show="focusMetric == 'bounce_rate_direct_new' ">
+          <p>Visitors that are Direct Traffic usually open your frontpage first. To lower bounce rate, you should offer them great calls to action right on the frontpage.</p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_display_new' ">
+          <p>Make sure your landing page work together with your ad creative and deliver the same messages. Ideally, create a separate landing page for every ad message.</p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_paid_new' ">
+          <p>Think about where you show your ads and what landing pages you drive them to. Optimize the (ad placement) - (ad creative) - (landing page content) chains. </p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_organic_new' ">
+          <p>Find out what pages and what keywords are most common for your Search Engines traffic and optimize the landing pages for their corresponding keywords.</p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_email_new' ">
+          <p>You overpromise in your emails and underdeliver on the landing pages. Give your users something special so they don't unsubscribe but rather engage with your product.</p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_referral_new' ">
+          <p>Make sure that you provide Referral visitors with a link to a relevant page (give example here?) so they see what they expect and what they want when they come to your website. </p>
+        </div>
+        <div ng-show="focusMetric == 'bounce_rate_social_new' ">
+          <p>Social visitors often have a very short attention span. Create a special offer or content so appealing that they stop clicking and pay attention to your product.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

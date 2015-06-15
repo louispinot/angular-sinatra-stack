@@ -1,0 +1,26 @@
+<div class="form-signin">
+  <a href="/"><img alt="Logo" src="/assets/logo.svg" width="340px"></a>
+
+  <form class="form" ng-controller="ResetCtrl" name="resetForm" ng-submit="send_reset(email)">
+
+    <div class="form-feedback" ng-show="resetForm.$invalid && resetForm.$dirty">
+      <p class="help-block" ng-show="(resetForm.email.$invalid || resetForm.email.$error.required) && resetForm.email.$touched">Please enter valid email.</p>
+    </div>
+
+    <div class="form-wrapper">
+      <div class="custom-control">
+        <span class="icon icon-mail"></span>
+        <input  type="email" name="email" class="login-input" ng-model="email" class="email" placeholder="Email" required="" autocomplete="off" autofocus>
+      </div>
+    </div> <!-- form wrapper -->
+
+    <div class="submit-wrapper">
+      <div>
+        <button id="login-btn" type="submit" class="btn btn-primary" ng-disabled="!resetForm.$valid">Reset password</button>
+      </div>
+    </div><!-- submit wrapper -->
+
+    <p id="login-acct">Remember your details? <a class="link" ng-href="login">Sign in</a></p>
+  </form>
+
+</div>

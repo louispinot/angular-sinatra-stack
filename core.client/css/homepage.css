@@ -1,0 +1,325 @@
+
+#first-div {
+  height: 102vh;
+  background-image: url(../assets/header_darker.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #306581;
+  position: relative;
+  top: -10px;
+  margin-bottom: -20px;
+}
+
+
+#value-prop {
+  margin-top: 250px;
+  margin-bottom: 40px;
+  font-size: 65px;
+  color: white;
+  letter-spacing: 2px;
+  border: 2px solid #b7d7ea;
+  padding: 20px;
+  text-align: center;
+}
+
+#first-div #call2action {
+  position: relative;
+  top: 35px;
+  left: 35px;
+}
+
+#call2action {
+  text-transform: uppercase;
+  color: #3A97C8;
+  background-color: white;
+  padding: 21px 60px 15px;
+  font-size: 21px;
+  font-weight: 600;
+  border-radius: 5px;
+  border-bottom: 3px solid #b7d7ea;
+  border-right: 3px solid #b7d7ea;
+}
+
+#call2action:hover {
+  text-decoration: none;
+  background-color: #d4eaf7
+}
+
+#first-div .subtitle {
+  text-align: right;
+  color: white;
+  font-size: 27px;
+  padding-right: 45px;
+  margin-top: 12px;
+}
+
+#second-div {
+  padding: 100px 30px;
+  background-color: #3A97C8;
+}
+
+#second-div .desc {
+    color:white;
+}
+#second-div .desc h2 {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  margin-bottom: 25px;
+  margin-top: 43px;
+}
+#second-div .desc p {
+  font-size: 22px;
+  line-height: 32px;
+}
+#second-div a {
+  padding: 19px 30px 15px;
+  background-color: #3A97C8;
+  border: 1px solid white;
+  border-radius: 5px;
+  color:white;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  top: 35px;
+}
+#second-div a:hover {
+  text-decoration: none;
+}
+
+#second-div .wrapper{
+  width: 482px;
+  height: 305px;
+  overflow: scroll;
+  position: absolute;
+  top: 38px;
+  left: 94px;
+}
+
+#second-div .wrapper img{
+margin:0;
+padding:0;
+}
+
+@media (max-width:1200px) and (min-width: 992px){
+ #second-div .desc h2 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  #second-div .desc p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+
+#third-div {
+  padding: 50px 0 70px;
+}
+
+#third-div .item {
+  text-align: center
+}
+#third-div img {
+  display: inline;
+  width:200px;
+  height: auto;
+  padding:0;
+  margin: 0;
+  margin-top: 40px;
+}
+
+#third-div h3 {
+  color: #3A97C8;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+#third-div p {
+  font-size: 16px;
+}
+
+#testimonials-div {
+  height:630px;
+  padding: 75px 30px;
+  text-align: center;
+  background-color: #c6dfee;
+}
+.blue-center-title {
+  text-align: center;
+  color: #3A97C8;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+#testimonials-div .quote {
+  font-size: 24px;
+  max-width: 875px;
+  margin: auto;
+  padding-top: 40px;
+  color: black;
+}
+#testimonials-div table {
+  display:inline-block;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-size: 24px;
+  line-height: 18px;
+}
+#testimonials-div img {
+  width:77px;
+  height: 90px;
+  margin-right: 25px;
+}
+
+#testimonials-div .name {
+  color: black;
+}
+
+#fans-div {
+  padding: 75px 0;
+  background-color: white;
+}
+#fans-div .thumb {
+  height:55px;
+  width:55px;
+  padding:0;
+  display:inline;
+}
+
+#fans-div .column-title, #research-div .column-title {
+  padding-bottom: 20px;
+  font-weight: 600;
+  color: #3A97C8;
+  font-size: 21px;
+}
+
+#fans-div .caption {
+  display: inline-block;
+  font-size: 15px;
+  color: black;
+  padding-left: 8px;
+}
+#fans-div .caption.aligned {
+  position:relative;
+  top: 22px;
+}
+
+#fans-div .press-link {
+  font-size: 15px;
+  color: #3A97C8;
+  height:75px;
+}
+
+#fans-div .press-link a:hover, #research-div .report a:hover {
+  text-decoration: none;
+  color: #306581;
+}
+
+#fans-div .press-link p {
+  height: 45px;
+  max-width: 66%;
+  position: relative;
+  top: -58px;
+  left: 68px;
+}
+
+
+#research-div {
+  padding: 75px 30px;
+  background-color: #c6dfee;
+}
+#research-div .container {
+/*  padding-top: 20px;
+  width: 92%;*/
+}
+#research-div h3 {
+  margin-bottom: 15px;
+}
+#research-div .report {
+  display: inline-block;
+  padding-right: 12px;
+  font-size: 18px;
+}
+#research-div .report img {
+  margin: 0;
+  padding: 0;
+}
+#research-div .report a {
+  display: block;
+  margin-top:6px;
+}
+#research-div .blog a {
+  color: #3A97C8;
+}
+#research-div .blog {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+#research-div .extra-margin {
+  margin-bottom: 30px;
+}
+
+#research-div .no-padding, #fans-div .no-padding {
+  padding:0;
+}
+
+#lower-call2action #call2action {
+  position: relative;
+  top: 55px;
+}
+
+#lower-call2action {
+  padding: 100px 30px 140px;
+  text-align: center;
+  background-color: #3A97C8;
+
+}
+
+#lower-call2action h2{
+  padding: 0;
+  margin:0;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+
+#landing-footer {
+  background-color: white;
+}
+#landing-footer .container {
+/*width: 92%;*/
+}
+#landing-footer td {
+padding-right: 75px;
+}
+
+#landing-footer table {
+  margin: 40px 0;
+}
+#landing-footer img {
+  width:190px;
+  padding-top: 25px;
+}
+
+#landing-footer table a, #research-div .blog a {
+  text-decoration: none;
+  color:#3A97C8;
+}
+
+#landing-footer table a:hover, #research-div .blog a:hover {
+  text-decoration: none;
+  color:#306581;
+}
+
+
+
+
+

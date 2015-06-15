@@ -1,0 +1,17 @@
+<div ng-include="'views/second_nav.html'" class='widget'></div>
+<div ng-include="'views/dashboard/lifestage_questions.html'" class='widget'></div>
+<div ng-include="'views/dashboard/performance_chart.html'" class='widget'></div>
+<div ng-include="'views/dashboard/traffic_lights.html'" class='widget'></div>
+<div ng-include="'views/dashboard/effective_sources.html'" class='widget'></div>
+<div ng-include="'views/dashboard/resource_allocation.html'" class='widget'></div>
+
+<!-- ########    ADMINS  FORM    ######### -->
+  <div id="admin-settings" ng-controller="AdminCtrl">
+    <div ng-if='isAdmin'>
+      <form ng-submit="loginAs()">
+      <input type="text" class="form-control" placeholder="User ID" ng-model="user.id">
+      <button type="submit" class="btn-danger btn" >Login as</button>
+    </form>
+    </div>
+  </div>
+<!-- #################################### -->

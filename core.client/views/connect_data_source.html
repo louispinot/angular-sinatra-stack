@@ -1,0 +1,6 @@
+<div ng-controller="saas_connectionsCtrl">
+  <div ng-include="'views/partials/data_sources.html'"></div>
+  <div ng-if="connectedServices.length == 0" id="src-skip">Skip. <a href="/" class="link">I'll do this later</a></div>
+  <div ng-if="connectedServices.length != 0" id="src-skip"><a href="/" class="link">Next</a></div>
+</div>
+

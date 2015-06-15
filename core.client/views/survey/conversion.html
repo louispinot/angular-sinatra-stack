@@ -1,0 +1,90 @@
+<div id="survey-wrapper">
+
+  <form class="form form-clustering" ng-controller="SurveyClusteringCtrl"
+        ng-submit="send_form(form_clustering, 'conversion', 'lifecycle')"
+        id="form_clustering" name="form_clustering" novalidate>
+    <div class="form-group">
+      <label translate id="survey-question">
+        What conversion ratio do you consider most relevant to your business?
+      </label>
+
+      <br><br><br><!-- so I can use the same css as on the users and customers questions -->
+
+      <div id="vertical-options">
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_visitor_user" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_visitor_user}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>Visitor <i class="fa fa-long-arrow-right"></i>  User</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_visitor_lead" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_visitor_lead}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>Visitor <i class="fa fa-long-arrow-right"></i> Lead</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_visitor_payer" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_visitor_payer}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>Visitor <i class="fa fa-long-arrow-right"></i> Paying Customer</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_user_payer" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_user_payer}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>User <i class="fa fa-long-arrow-right"></i> Paying Customer</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_lead_payer" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_lead_payer}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>Lead <i class="fa fa-long-arrow-right"></i> Paying Customer</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" ng-model="model.conv_other" value="true"
+                   ng-required='!(model.conv_visitor_user||model.conv_visitor_lead||model.conv_visitor_payer||model.conv_user_payer||model.conv_lead_payer||model.conv_other)'>
+
+            <div class="custom-checkbox squarely" ng-class="{'active' : model.conv_other}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+
+            <span translate>None of these</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" ng-disabled="form_clustering.$invalid" class="btn" id="btn-next">
+      <img src="../../assets/arrow_down.svg", style="margin:0;padding:0">
+    </button>
+  </form>
+
+</div>
+
+<div ng-include="'views/partials/survey_steps.html'"></div>

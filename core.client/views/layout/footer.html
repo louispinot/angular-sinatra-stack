@@ -1,0 +1,66 @@
+<footer ng-controller="FooterCtrl" ng-show="showFooter()">
+  <div class="container footer">
+    <div class="col-sm-2 col-xs-2">
+      <h5 class="footer-header">About</h5>
+      <a href="/terms" target="_blank"><p class="footer-subcategory">Terms & conditions</p></a>
+      <a href="mailto:support@compass.co"><p class="footer-subcategory">Contact</p></a>
+    </div>
+
+    <div class="col-md-2 col-sm-3" id="footer-icon-group">
+      <a href="https://www.facebook.com/Compass.bi"><img class="footer-icons" alt="Facebook" src="/assets/facebook-icon.png" ></a>
+      <a href="https://twitter.com/startupcompass"><img class="footer-icons" alt="Twitter" src="/assets/twitter-icon.png" ></a>
+      <a href="https://plus.google.com/102363074453140014387/posts"><img class="footer-icons" alt="Google+" src="/assets/google-plus-icon.png" ></a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<!-- Footer for homepage  -->
+<div id="landing-footer" ng-show="$root.layout === 'landing'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xs-12">
+<!--         <table>
+          <tr>
+            <td><a href="#">Features</a></td>
+            <td><a href="#">Press</a></td>
+            <td><a href="/terms">Terms</a></td>
+            <td class="hidden-xs"><a href="https://monitor.compass.co/">Compass Monitor</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">About</a></td>
+            <td><a href="#">Jobs</a></td>
+            <td><a href="#">Privacy Pledge</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">FAQ</a></td>
+            <td><a href="http://blog.startupcompass.co/">Blog</a></td>
+            <td><a href="/policy">Privacy Policy</a></td>
+          </tr>
+        </table> -->
+
+
+        <!-- This is the footer until we have all the above links ready -->
+        <table>
+          <tr>
+            <td><a href="http://blog.startupcompass.co/">Blog</a></td>
+            <td><a href="https://monitor.compass.co/">Compass Monitor</a></td>
+          </tr>
+          <tr>
+            <td><a href="/terms" target="_blank">Terms</a></td>
+          </tr>
+          <tr>
+            <td><a href="/policy" target="_blank">Privacy Policy</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-offset-0 col-md-3 col-xs-6 col-xs-offset-3 col-sm-offset-4">
+        <img src="../../assets/logo.svg">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div id="mkt-input" ><!-- ng-controller="marketingInputCtrl" -->
+
+  <div class="title">
+    <h2>Marketing budget allocation</h2>
+  </div>
+
+
+  <div class="vertical-line"></div>
+  <table class="main-table">
+
+    <thead>
+      <tr>
+        <th></th>
+        <td class="months" ng-repeat="month in months">{{month}}</td>
+      </tr>
+    </thead>
+
+    <form name="marketingForm" id="marketing-form" ng-submit="saveMetrics()">
+      <tbody ng-repeat='row in rows'>
+        <!-- TOP LEVEL ROW -->
+        <tr ng-if="row.nested">
+          <th>{{ displayName(row.name) }}</th>
+          <td class="input-td grey" ng-repeat="month in months">
+            <span>$<span class="sum">{{total($parent.row.nested)[month] || "—"}}</span></span>
+          </td>
+        </tr>
+         <!-- END nested rows -->
+         <!-- NESTED ROWS -->
+         <tr ng-mouseover="hover('in', subRow)" ng-mouseleave="hover('out', subRow)" ng-class="{highlight: subRow.highlight }" class="sub-level" ng-if="row.nested" ng-repeat='subRow in row.nested'>
+          <th><span>{{ displayName(subRow.name) }}</span></th>
+          <td class="input-td" ng-repeat="item in subRow.data">
+            <span>$<input type="number" min="0" ng-model="item.value"></span>
+          </td>
+
+
+          <td class="help" popover="{{tooltip(subRow.name)}}" popover-trigger="mouseenter" popover-placement="left"><i class="fa fa-question-circle"></i></button></td>
+        </tr>
+        <!-- END nested rows -->
+
+        <!-- SINGLE LEVEL ROWS -->
+        <tr ng-mouseover="hover('in', row)" ng-mouseleave="hover('out', row)" ng-class="{highlight: row.highlight }" ng-if="!row.nested && !row.remove">
+          <th><span>{{ displayName(row.name) }}</span> <i ng-if="row.custom" ng-click="removeRow(row)" class="fa fa-times"></i></th>
+          <td class="input-td" ng-repeat="item in row.data">
+            <span>$<input type="number" min="0" ng-model="item.value"></span>
+          </td>
+
+
+          <td class="help" ng-if="!row.custom" popover="{{tooltip(row.name)}}" popover-trigger="mouseenter" popover-placement="left"><i  class="fa fa-question-circle"></i></td>
+        </tr>
+        <!-- END single level rows -->
+      </tbody>
+    </form><!-- markting-form -->
+
+    <form id="newRowForm" name="newRowForm" ng-submit="createRow()">
+      <tbody id="newRow">
+
+        <tr ng-if="!editing" class="form-trigger">
+          <th ng-click='newRow()'><i class="fa fa-plus"></i> Add a Category</th>
+          <td ng-click='newRow()' class="input-td grey" ng-repeat="month in months">
+            <span>$</span>
+          </td>
+
+
+          <td class="help" popover="{{tooltip('add_category')}}" popover-trigger="mouseenter" popover-placement="left"><i  class="fa fa-question-circle"></i></td>
+        </tr>
+
+        <tr ng-if="editing">
+          <th id="new-manual-metric">
+            <input name='metric' ng-model="$parent.newMetric" type="text" placeholder="New metric name" autofocus="autofocus" >
+            <button type="submit" form="newRowForm" class="new-metric"><i class="fa fa-check"></i></button>
+          </th>
+          <td class="input-td grey" ng-repeat="month in months">
+            <span>$</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </form>
+
+    <tbody class="total">
+      <tr class="separator"></tr>
+      <tr>
+        <th>Total</th>
+
+        <td class="input-td grey" ng-repeat="month in months">
+          <span>$ {{ total($parent.rows)[month] || "—"}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <br><br>
+  <div class="form-buttons">
+    <button type="submit" form="marketing-form" class="save">Submit</button>
+    <button class="cancel" ng-click="closeModal()">Cancel</button>
+  </div>
+
+</div>
+

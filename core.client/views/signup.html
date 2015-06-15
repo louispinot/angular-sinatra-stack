@@ -1,0 +1,56 @@
+<div class="form-signin">
+  <a href="/"><img alt="Logo" width="340px" src="/assets/logo.svg"></a>
+
+  <form class="form" ng-controller="SignupCtrl" name="signupForm" ng-submit="signup(user)" novalidate="">
+
+    <div class="form-feedback" ng-show="signupForm.$invalid && signupForm.$dirty">
+      <p ng-show="(signupForm.email.$invalid || signupForm.email.$error.required) && signupForm.email.$touched">Please enter valid email.</p>
+      <p ng-show="signupForm.company_name.$error.required && signupForm.company_name.$touched">Company name is required.</p>
+      <p ng-show="signupForm.phone.$error.required && signupForm.phone.$touched">Phone number is required.</p>
+      <p ng-show="signupForm.password.$error.required && signupForm.password.$touched">Password is required.</p>
+    </div>
+
+    <div class="form-wrapper">
+
+      <div class="custom-control" >
+        <span class="icon icon-mail"></span>
+        <input type="email" name="email" class="login-input" ng-model="user.email" class="email" placeholder="Email" required="" autocomplete="email" autofocus>
+      </div>
+
+      <div class="custom-control" >
+        <span class=" icon icon-company"></span>
+        <input type="company_name" name="company_name" class="login-input" ng-model="user.company_name" id="company_name" placeholder="Company name" required="" autocomplete="off">
+      </div>
+
+      <div class="custom-control" >
+        <span class="icon icon-phone"></span>
+        <input type="phone_number" name="phone" class="login-input" ng-model="user.phone_number" id="phone_number" placeholder="Phone number" required="" autocomplete="tel">
+      </div>
+
+      <div class="custom-control" >
+        <span class="icon icon-password"></span>
+        <input type="password" name="password" class="login-input" ng-model="user.password" id="password" placeholder="Password" required="" autocomplete="off">
+      </div>
+
+    </div> <!-- form wrapper -->
+
+    <div class="submit-wrapper">
+
+      <div class="custom-control">
+        <input type="checkbox" ng-model="terms" required="" > Please accept the<a href="/terms" target="_blank"> terms and conditions </a>
+      </div>
+
+      <div>
+        <button type="submit" id="login-btn" class="btn btn-primary" ng-disabled="!signupForm.$valid">Sign up</button>
+      </div>
+
+    </div> <!-- submit wrapper -->
+
+  </form>
+  <p id="login-acct">Already have an account? <a class="link" ng-href="login">Sign in</a></p>
+
+  <p class="terms-of-use">By creating an account you agree to our <a class="link" id="" href="/terms" target="_blank">Terms of Use</a> and <a class="link" ng-href="policy" target="_blank">Privacy Policy</a> </p>
+
+
+
+</div>

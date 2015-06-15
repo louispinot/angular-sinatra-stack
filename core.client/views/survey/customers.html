@@ -1,0 +1,66 @@
+<div id="survey-wrapper">
+
+  <form class="form form-clustering" ng-controller="SurveyClusteringCtrl" ng-submit="send_form(form_clustering, 'customers', 'conversion')" id="form_clustering" name="form_clustering" novalidate>
+    <div class="form-group">
+      <label translate id="survey-question">
+        Who are your paying customers?
+      </label>
+      <br><br><br>
+
+      <div id="vertical-options">
+        <div class="option">
+          <label>
+            <input type="radio" ng-click="send_form(form_clustering, 'customers', 'conversion')" name='payer-consumer' ng-model="model.payer" value="payer_consumer"
+            ng-required='!(model.payer_consumer || model.payer_sme || model.payer_enterprise || model.payer_other)'>
+            <div class="custom-checkbox" ng-class="{'active' : model.payer == 'payer_consumer'}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>
+              Consumers
+            </span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" ng-click="send_form(form_clustering, 'customers', 'conversion')" name='payer-sme' ng-model="model.payer" value="payer_sme"
+            ng-required='!(model.payer_consumer || model.payer_sme || model.payer_enterprise || model.payer_other)'>
+            <div class="custom-checkbox" ng-class="{'active' : model.payer == 'payer_sme'}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>
+              Small & medium businesses
+            </span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" ng-click="send_form(form_clustering, 'customers', 'conversion')" name='payer-enterprise' ng-model="model.payer" value="payer_enterprise"
+            ng-required='!(model.payer_consumer || model.payer_sme || model.payer_enterprise || model.payer_other)'>
+            <div class="custom-checkbox" ng-class="{'active' : model.payer == 'payer_enterprise'}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>
+              Large enterprises
+            </span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" ng-click="send_form(form_clustering, 'customers', 'conversion')" name='payer-other' ng-model="model.payer" value="payer_other"
+            ng-required='!(model.payer_consumer || model.payer_sme || model.payer_enterprise || model.payer_other)'>
+            <div class="custom-checkbox" ng-class="{'active' : model.payer == 'payer_other'}">
+              <img src="../../assets/checkmark.svg">
+            </div>
+            <span translate>
+              Others
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<div ng-include="'views/partials/survey_steps.html'"></div>

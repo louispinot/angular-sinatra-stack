@@ -1,0 +1,30 @@
+<div id="survey-wrapper">
+
+  <form class="form form-clustering" ng-controller="SurveyClusteringCtrl"
+        ng-submit="send_form(form_clustering, 'revenue', 'dashboard')"
+        id="form_clustering" name="form_clustering" novalidate>
+    <div class="form-group">
+      <label for="revenue-channel" translate id="survey-question">
+        What is your primary revenue channel?
+      </label>
+      <select class="form-control" ng-model="model.revenue_channel" id="revenue-channel" ng-required='true' ng-change="send_form(form_clustering, 'revenue', 'dashboard')">
+        <option value="rev_advertising" translate>Advertising</option>
+        <option value="rev_consulting" translate>Consulting</option>
+        <option value="rev_data" translate>Data</option>
+        <option value="rev_hardware" translate>Hardware</option>
+        <option value="rev_lead_generation" translate>Lead Generation</option>
+        <option value="rev_license" translate>License Fee</option>
+        <option value="rev_listing" translate>Listing Fee</option>
+        <option value="rev_ownership" translate>Ownership</option>
+        <option value="rev_rental" translate>Rental</option>
+        <option value="rev_sponsorship" translate>Sponsorship</option>
+        <option value="rev_subscription" translate>Subscription</option>
+        <option value="rev_transaction" translate>Transaction Fee</option>
+        <option value="rev_unit_selling" translate>Unit selling</option>
+        <option value="rev_virtual_goods" translate>Virtual Goods</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div ng-include="'views/partials/survey_steps.html'"></div>

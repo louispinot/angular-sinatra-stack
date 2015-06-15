@@ -1,0 +1,22 @@
+<div id="effective-sources" ng-controller="EffectiveSourcesCtrl">
+
+  <div ng-include="'views/partials/graphs_spinner.html'"></div>
+
+  <div>
+    <div class="header">
+      <h3>What are your most <strong>effective sources of traffic</strong>?</h3>
+      <p>A low bounce rate is a good indicator of quality traffic and shows your strongest effort Vs. where your efforts might be wasted.</p>
+    </div>
+    <div class="toggle-graph">
+      <a ng-href="#" ng-show="hasData.all" ng-class="{active: activeLink == 'All'}" ng-click="graph('All')">All</a>
+      <a ng-href="#" ng-show="hasData.organic" ng-class="{active: activeLink == 'Organic'}" ng-click="graph('Organic')">Organic</a>
+      <a ng-href="#" ng-show="hasData.direct" ng-class="{active: activeLink == 'Direct'}" ng-click="graph('Direct')">Direct</a>
+      <a ng-href="#" ng-show="hasData.email" ng-class="{active: activeLink == 'Email'}" ng-click="graph('Email')">Email</a>
+      <a ng-href="#" ng-show="hasData.referral" ng-class="{active: activeLink == 'Referral'}" ng-click="graph('Referral')">Referral</a>
+      <a ng-href="#" ng-show="hasData.display" ng-class="{active: activeLink == 'Display'}" ng-click="graph('Display')">Display</a>
+      <a ng-href="#" ng-show="hasData.paid" ng-class="{active: activeLink == 'Paid'}" ng-click="graph('Paid')">Paid</a>
+      <a ng-href="#" ng-show="hasData.social" ng-class="{active: activeLink == 'Social'}" ng-click="graph('Social')">Social</a>
+    </div>
+    <chart value='chartData' height="400" chart-obj='chartObj'></chart>
+  </div>
+</div>

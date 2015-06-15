@@ -1,0 +1,15 @@
+<div id="complete-message" ng-if="!lifestageCompleted || !googleConnected || !enoughData">
+  <h4 class="text-center" ng-if="!lifestageCompleted || !googleConnected">To Benchmark Your Company</h4>
+  <ul>
+    <li ng-if="!lifestageCompleted">Complete lifestage questions</li>
+    <li ng-if="!googleConnected">Please connect google Analytics</li>
+  </ul>
+  <a href="/data_sources" ng-if="!googleConnected" class="btn center-block">Add Google Analytics</a>
+
+  <div class="data-spinner" ng-if="googleConnected && !enoughData && lifestageCompleted">
+    <i class="fa fa-circle-o-notch fa-spin"></i>
+    <h4>Importing & Processing Data</h4>
+    <p>This might take a few minutes</p>
+  </div>
+</div>
+

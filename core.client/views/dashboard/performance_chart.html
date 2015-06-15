@@ -1,0 +1,21 @@
+<div id="performance" ng-controller="PerformanceCtrl">
+
+  <div ng-include="'views/partials/graphs_spinner.html'"></div>
+
+  <div>
+    <div class="header">
+      <h3>Track and <strong>Benchmark your Growth</strong></h3>
+
+      <p>See how you're performing compared to similar companies. Make sure that you know about changes that affect the
+        industry vs only you and set
+        relative objectives for your team.</p>
+    </div>
+    <div class="toggle-graph">
+      <a ng-href="#" ng-class="{active: activeLink == 'uniqueVisitors'}" ng-click="graph('unique')">Unique Visitors</a>
+      <a ng-href="#" ng-class="{active: activeLink == 'timeOnSite'}" ng-click="graph('time')">Time on Site</a>
+      <a ng-href="#" ng-class="{active: activeLink == 'bounceRate'}" ng-click="graph('bounce')">Bounce Rate</a>
+      <a ng-href="#" ng-class="{active: activeLink == 'returningVisitors'}" ng-click="graph('returning')">Returning Visitors</a>
+    </div>
+    <chart value='chartData' height="400" chart-obj='chartObj'></chart>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="form-settings">
+  <h3 id="my-account">My account</h3>
+
+  <form id="settings-form" class="form-horizontal" ng-controller="SettingsCtrl" name="SettingsForm" ng-submit="submitSettingsForm()" novalidate="">
+
+    <div class="form-group">
+      <label class="control-label settings-label" for="company_name">Company name</label>
+      <input type="text" name="company_name" id="company_name" class="form-control myaccount-control" ng-model="user.company_name">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label settings-label" for="company_email">Email</label>
+      <input type="email" name="email" id="company_email" class="form-control myaccount-control" ng-model="user.email">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label settings-label" for="company_phone">Phone</label>
+      <input type="text" name="phone_number" id="company_phone" class="form-control myaccount-control" ng-model="user.phone_number">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label settings-label" for="company_website">Website</label>
+      <input type="text" name="website" id="company_website" class="form-control myaccount-control" ng-model="user.website" >
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label settings-label" for="company_password">Change password</label>
+      <input type="password" name="password" id="company_password" class="form-control myaccount-control" placeholder="Enter new password" ng-model="user.password" id="oldPassword" autocomplete="off">
+    </div>
+
+
+
+    <div class="">
+      <button type="submit" id="change-btn" class="btn btn-primary" ng-disabled="!SettingsForm.$valid">Save</button>
+
+      <a href="/" type="button" id="cancel-btn" class="btn btn-default">Cancel</a>
+    </div>
+  </form>
+</div>

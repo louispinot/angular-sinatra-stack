@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="compass" ng-controller="MainCtrl">
+<head lang="en">
+  <!-- Optimizely recommends putting their script right after the opening head tag -->
+  <script src="//cdn.optimizely.com/js/2504731210.js"></script>
+
+  <title>Compass</title>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/favicon.co">
+  <!-- external CSS (not for minification) -->
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:300'>
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:700,300,600,400'>
+  <link rel='stylesheet' type='text/css' href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- build:css styles/style.css -->
+  <link rel="stylesheet" type='text/css' href="bower_components/animate.css/animate.min.css"/>
+  <link rel="stylesheet" type='text/css' href="bower_components/bootstrap-css-only/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type='text/css' href="css/main.css"/>
+  <link rel="stylesheet" type='text/css' href="css/lifestage_widget.css"/>
+  <link rel="stylesheet" type='text/css' href="css/survey.css"/>
+  <link rel="stylesheet" type='text/css' href="css/loading_bar.css"/>
+  <link rel="stylesheet" type='text/css' href="css/second_nav.css"/>
+  <link rel="stylesheet" type='text/css' href="css/traffic_lights.css"/>
+  <link rel="stylesheet" type='text/css' href="css/navbar.css"/>
+  <link rel="stylesheet" type='text/css' href="css/charts_widgets.css"/>
+  <link rel="stylesheet" type='text/css' href="css/homepage.css"/>
+  <link rel="stylesheet" type='text/css' href="css/signup_login.css"/>
+  <link rel="stylesheet" type='text/css' href="css/compass_icons.css"/>
+  <link rel="stylesheet" type='text/css' href="css/data_sources.css"/>
+  <link rel="stylesheet" type='text/css' href="css/marketing_input.css"/>
+
+  <!-- endbuild -->
+
+  <!-- only ANGULAR javascript files (angular.js) has to be loaded in <head> to have Angular available before the first NG-tag loads.
+       Place all other JS-files at the end of the document (see vendor.js) -->
+  <!-- build:js scripts/angularjs.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- endbuild -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44785352-3', 'core.compass.co');
+  </script>
+
+
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">
+  (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+
+      if (window.location.host == 'www.compass.co') {
+        var token = "d138515f9a5fba009c3197b07755801b";
+      } else {
+        var token = "11b059bcc9967015551782f583382e88";
+      };
+
+      mixpanel.init(token);
+  </script>
+  <!-- end Mixpanel -->
+</head>
+<body ng-class="{preventOverflow: preventOverflow}">
+
+
+
+<div ng-include="'views/layout/navbar.html'"></div>
+<section id="content" class="content">
+  <div class="container widget">
+    <div class="alert alert-{{alert.type}}" ng-cloak ng-repeat="alert in alerts" role="alert" style="margin:3px 0 0 0">{{alert.msg}}</div>
+  </div>
+  <div ng-view class="fade-in-animation" ng-class="{'container': $root.layout === 'survey' || $root.layout === 'application' || $root.layout === 'bareLogo',  'scrollBarRemove': $root.layout === 'login'}"></div>
+</section>
+<div ng-include="'views/layout/footer.html'"></div>
+
+<!-- external JS (not for minification) -->
+
+<!-- all local JS except Angular-related JS-files (see above in <head> part) -->
+<!-- build:js scripts/vendor.js -->
+<script src="bower_components/highcharts-release/adapters/standalone-framework.js"></script>
+<script src="bower_components/highcharts-release/highcharts.js"></script>
+<script src="bower_components/highcharts-release/highcharts-more.js"></script>
+<script src="bower_components/highcharts-release/themes/grid-light.js"></script>
+<script src="bower_components/highcharts-release/modules/exporting.js"></script>
+<script src="bower_components/angulartics/src/angulartics.js"></script>
+<script src="bower_components/angulartics/src/angulartics-mixpanel.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/compass.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/app.filters.js"></script>
+<script src="scripts/app.routes.js"></script>
+<script src="scripts/app.global_error.js"></script>
+
+<!-- controllers -->
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/signup.js"></script>
+<script src="scripts/controllers/reset.js"></script>
+<script src="scripts/controllers/survey_clustering.js"></script>
+<script src="scripts/controllers/dashboard/survey_stage.js"></script>
+<script src="scripts/controllers/navbar.js"></script>
+<script src="scripts/controllers/dashboard/performance.js"></script>
+<script src="scripts/controllers/settings.js"></script>
+<script src="scripts/controllers/saas_connections.js"></script>
+<script src="scripts/controllers/feedback.js"></script>
+<script src="scripts/controllers/footer.js"></script>
+<script src="scripts/controllers/saas_callback.js"></script>
+<script src="scripts/controllers/dashboard/second_nav.js"></script>
+<script src="scripts/controllers/dashboard/traffic_lights.js"></script>
+<script src="scripts/controllers/error.js"></script>
+<script src="scripts/controllers/homepage.js"></script>
+<script src="scripts/controllers/dashboard/effective_sources.js"></script>
+<script src="scripts/controllers/admin.js"></script>
+<script src="scripts/controllers/marketing_input.js"></script>
+<script src="scripts/controllers/dashboard/resource_allocation.js"></script>
+
+<!-- services -->
+<script src="scripts/services/alert.js"></script>
+<script src="scripts/services/auth.js"></script>
+<script src="scripts/services/login.js"></script>
+<script src="scripts/services/session.js"></script>
+<script src="scripts/services/user.js"></script>
+<script src="scripts/services/error.js"></script>
+<script src="scripts/services/logentries.js"></script>
+<script src="scripts/services/marketing_resources.js"></script>
+
+<!-- directives -->
+<script src="scripts/directives/chart.js"></script>
+<script src="scripts/directives/loading-bar.js"></script>
+<script src="scripts/directives/multiline-ellipsis.js"></script>
+<script src="scripts/directives/homepage_carousel_fix.js"></script>
+<script src="scripts/directives/le.min.js"></script>
+<!-- endbuild -->
+</body>
+
+</html>

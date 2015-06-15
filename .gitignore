@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+dist
+gulp/
+
+# Unicorn:
+tmp/
+log/
+
+# R
+.RData
+.Rhistory
+R_last_execution_output.txt
+
+logentriesGem.log
+

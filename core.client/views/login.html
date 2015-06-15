@@ -1,0 +1,34 @@
+<div class="form-signin">
+  <a href="/"><img alt="Logo" src="/assets/logo.svg" width="340px"></a>
+
+<form id="login-form" class="form" ng-controller="LoginCtrl" name="loginForm" ng-submit="authenticate()" novalidate="">
+
+  <div class="form-feedback" ng-show="loginForm.$invalid && loginForm.$dirty">
+    <p class="help-block" ng-show="(loginForm.email.$invalid || loginForm.email.$error.required) && loginForm.email.$touched">Please enter valid email.</p>
+    <p class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$touched">Password required.</p>
+  </div>
+
+
+  <div class="form-wrapper">
+    <div class="custom-control">
+        <span class="icon icon-mail"></span>
+        <input class="login-input" type="email" name="email" class="form-control" ng-model="user.email" id="email" placeholder="Email" required="" autocomplete="email" autofocus>
+    </div>
+
+    <div class="custom-control">
+      <span class="icon icon-password"></span>
+      <input class="login-input" type="password" name="password" class="form-control" ng-model="user.password" id="password" placeholder="Password" required="" autocomplete="off">
+    </div>
+  </div> <!-- form wrapper -->
+
+  <div class="submit-wrapper">
+    <div>
+      <button type="submit" id="login-btn" class="btn btn-primary" ng-disabled="!loginForm.$valid">Sign in</button>
+    </div>
+    <p id="forgot-pass"><a class="link" ng-href="reset">Forgot your password?</a></p>
+  </div> <!-- submit wrapper -->
+
+</form>
+<p id="create-acct">Don't have an account? <a class="link" ng-href="signup">Create an account</a></p>
+
+</div>

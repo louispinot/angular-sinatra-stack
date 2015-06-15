@@ -1,0 +1,148 @@
+#traffic-lights {
+  background-color: white;
+  border: 1px solid #E5E5E5;
+  border-bottom: none
+}
+#traffic-lights .header {
+  padding: 0 20px;
+  margin-bottom: 10px
+}
+
+#traffic-lights h3 strong {
+  font-weight: 400;
+}
+
+#traffic-lights .section {
+  padding: 15px 20px 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+#traffic-lights .section h4 {
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+#traffic-lights .section-desc {
+  text-align: right;
+}
+
+#traffic-lights .section-info {
+  font-size: 13px;
+  /*margin-top:6px;*/
+}
+
+#traffic-lights .metric-indicator {
+  width: 71px;
+  height: 75px;
+  display: inline-block;
+  float:right;
+  margin-left:4px;
+  border-radius: 4px;
+  color: white;
+}
+
+#traffic-lights .metric-indicator {
+  margin-top: 5px;
+}
+
+#traffic-lights .metric-indicator.hoverable {
+  cursor: pointer;
+}
+
+#traffic-lights .metric-indicator.upper {
+  background-color: #58c153;
+}
+#traffic-lights .metric-indicator.middle {
+  background-color: #f0cc43;
+}
+#traffic-lights .metric-indicator.lower {
+  background-color: #e55512;
+}
+#traffic-lights .metric-indicator.notDefined {
+  background-color: #CCCCCC;
+  color: #666666;
+}
+
+#traffic-lights .metric-indicator p {
+  padding:3px 5px;
+  font-size: 12px;
+}
+
+#traffic-lights .metric-indicator span {
+  font-weight: 400;
+  font-size: 14px;
+  padding:0 5px 3px 0;
+}
+
+#traffic-lights .metric-indicator .info {
+  float: right;
+  border: 2px solid #666666;
+  border-radius: 17px;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+#traffic-lights .metric-indicator .info i {
+  position: relative;
+  left: 6px;
+  bottom: 1px;
+}
+
+#traffic-lights .metric-indicator .metric-value {
+  padding: 0 0 3px 5px;
+}
+
+
+#traffic-lights .legend {
+  padding: 0 30px;
+  margin-bottom: 15px
+}
+
+#traffic-lights .legend .item{
+  margin-right: 10px
+}
+
+#traffic-lights .legend .square{
+  display:inline-block;
+  margin: 0 4px;
+  height:13px;
+  width: 13px;
+}
+
+#traffic-lights .legend .red {
+  background-color: #e55512;
+}
+#traffic-lights .legend .yellow {
+  background-color: #f0cc43;
+}
+#traffic-lights .legend .green {
+  background-color: #58c153;
+}
+#traffic-lights .legend .grey {
+  background-color: #CCCCCC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

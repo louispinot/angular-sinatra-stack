@@ -1,0 +1,106 @@
+#overlay-back {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    width      : 100%;
+    background-color: rgba(0, 0 , 0, 0.5);
+    z-index    : 5;
+}
+
+
+.analyze-src{
+    height: 240px;
+    width: 250px;
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid #999999;
+    cursor:pointer;
+}
+
+#data-src-container h1{
+    font-weight:300;
+    font-size: 37px;
+    color: #3A97C8;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    margin-left: 3px;
+    text-align: center;
+}
+#data-src-container .left {
+ float: right;
+}
+#data-src-container .middle {
+ margin:auto;
+ margin-top: 40px;
+}
+#data-src-container .right {
+ float: left;
+}
+
+
+@media(max-width:992px) {
+  #data-src-container .left {
+    margin: auto;
+    float: none;
+    margin-top: 40px;
+  }
+
+  #data-src-container .right {
+    margin: auto;
+    float: none;
+    margin-top: 40px;
+  }
+
+}
+
+.white {
+    background-color: white;
+}
+
+.src-captn{
+    font-size: 13px;
+    color: #999999;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.src-img{
+    margin: 45px 0 20px 0;
+}
+
+
+#google-logo{
+    margin-left: -5px;
+    margin-bottom: 29px;
+}
+
+#paypal-logo{
+    height: 130px;
+    margin: 5px auto -10px auto;
+}
+
+#stripe-logo{
+    height: 90px;
+    margin: 30px auto 5px auto;
+}
+
+#src-skip{
+    margin-top: 45px;
+    margin-left: 30px;
+    font-size: 18px;
+    color: #999999;
+    text-align: center;
+}
+
+.src-link {
+  display:block;
+}
+
+.dim{
+    pointer-events: none;
+    background-color: rgba(0, 0 , 0, 0.2);
+}
+
+.no-pointer{
+    pointer-events: none;
+}

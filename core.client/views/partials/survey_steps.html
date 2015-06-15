@@ -1,0 +1,7 @@
+<ul id="current-step" ng-controller="SurveyClusteringCtrl" >
+  <li ng-repeat="step in steps">
+    <div class="custom-checkbox" id="checkbox-nav" ng-click="surveyNavButton(step)" ng-class="{'done cursor-pointer': $index < surveyIndex-1,'active': step == currentStep }">
+      <img ng-class="{'hide': $index > surveyIndex - 2}" src="../../assets/checkmark.svg">
+    </div>
+  </li>
+</ul>

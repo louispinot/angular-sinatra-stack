@@ -1,0 +1,15 @@
+# Please NOTE: This Rakefile is only used for Rspec tests.
+# For DB migrations, please, refer to the Rakefile in the root folder
+
+require_relative 'app'
+require 'sinatra/activerecord/rake'
+require 'rspec/core/rake_task'
+
+# this is necessary, as long as, the Sinatra application files reside outside of the core.api folder
+api_directory = './core.api/' # this assumes you're running `bundle exec rake -f ./core.api/Rakefile` from the root directory
+
+RSpec::Core::RakeTask.new :specs do |task|
+  task.pattern = Dir['%sspec/**/*_spec.rb' % api_directory]
+end
+
+task :default => ['specs']

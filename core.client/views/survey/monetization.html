@@ -1,0 +1,83 @@
+<div id="survey-wrapper">
+  <h3>Please answer some questions to setup your account:</h3>
+
+  <form class="form form-clustering" ng-controller="SurveyClusteringCtrl" ng-submit="send_form(form_clustering, 'monetization', 'users')"
+        id="form_clustering" name="form_clustering" novalidate>
+    <div class="form-group">
+      <label translate id="survey-question">
+        How do you/will you primarily make revenue?
+      </label>
+
+      <div class="row options">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="option">
+            <label class="option-box" ng-class="{'active' : model.monetiz == 'monetiz_direct_standard'}">
+              <input type="radio" ng-click="send_form(form_clustering, 'monetization', 'users')" value="monetiz_direct_standard" ng-model="model.monetiz" name="revenue-model-radios" id="direct-standard"
+                     ng-required='!(model.monetiz_direct_standard||model.monetiz_direct_freemium||model.monetiz_indirect_standard||model.monetiz_indirect_two_sided)'>
+              <span translate>
+                <p class="mon-type">Direct monetization</p>
+                <p class="mon-subtype">Standard</p>
+                <p class='mon-desc'>Users pay you to use your product or service.</p>
+                <p><img src="./assets/monetization/zendesk.png" class="monetization_logos"></p>
+                <p><img src="./assets/monetization/jawbone.png" class="monetization_logos" id="jawbone_logo"></p>
+                <p><img src="./assets/monetization/salesforce.png" class="monetization_logos" id="salesforce_logo"></p>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="option">
+            <label class="option-box" ng-class="{'active' : model.monetiz == 'monetiz_direct_freemium'}">
+              <input type="radio" ng-click="send_form(form_clustering, 'monetization', 'users')" value="monetiz_direct_freemium" ng-model="model.monetiz" name="revenue-model-radios" id="direct-freemium"
+                     ng-required='!(model.monetiz_direct_standard||model.monetiz_direct_freemium||model.monetiz_indirect_standard||model.monetiz_indirect_two_sided)'>
+              <span translate>
+                <p class="mon-type">Direct monetization</p>
+                <p class="mon-subtype">Freemium</p>
+                <p class='mon-desc'>Some users pay you to access the premium features.</p>
+                <p><img src="./assets/monetization/evernote.png" class="monetization_logos" id="evernote_logo"></p>
+                <p><img src="./assets/monetization/slack.png" class="monetization_logos"></p>
+                <p><img src="./assets/monetization/skype.png" class="monetization_logos"></p>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="option">
+            <label class="option-box" ng-class="{'active' : model.monetiz == 'monetiz_indirect_standard'}">
+              <input type="radio" ng-click="send_form(form_clustering, 'monetization', 'users')" value="monetiz_indirect_standard" ng-model="model.monetiz" name="revenue-model-radios"
+                     id="indirect-standard" ng-required='!(model.monetiz_direct_standard||model.monetiz_direct_freemium||model.monetiz_indirect_standard||model.monetiz_indirect_two_sided)'>
+              <span translate>
+                <p class="mon-type">Indirect monetization</p>
+                <p class="mon-subtype">Standard:</p>
+                <p class='mon-desc'>Your users are different from your paying customers.</p>
+                <p><img src="./assets/monetization/facebook.png" class="monetization_logos"></p>
+                <p><img src="./assets/monetization/linkedin.png" class="monetization_logos" id="linkedin_logo"></p>
+                <p><img src="./assets/monetization/cnn.png" class="monetization_logos" id="cnn_logo"></p>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="option">
+            <label class="option-box" ng-class="{'active' : model.monetiz == 'monetiz_indirect_two_sided'}">
+              <input type="radio" ng-click="send_form(form_clustering, 'monetization', 'users')" value="monetiz_indirect_two_sided" ng-model="model.monetiz" name="revenue-model-radios"
+                     id="indirect-two-sided" ng-required='!(model.monetiz_direct_standard||model.monetiz_direct_freemium||model.monetiz_indirect_standard||model.monetiz_indirect_two_sided)'>
+              <span translate>
+                <p class="mon-type">Indirect monetization</p>
+                <p class="mon-subtype">Two-sided market:</p>
+                <p class='mon-desc'>Your users are different than your paying customers, and you attract both payers and users.</p>
+                <p><img src="./assets/monetization/airbnb.png" class="monetization_logos"></p>
+                <p><img src="./assets/monetization/ebay.png" class="monetization_logos"></p>
+                <p><img src="./assets/monetization/etsy.png" class="monetization_logos"></p>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<div ng-include="'views/partials/survey_steps.html'"></div>
