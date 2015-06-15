@@ -1,10 +1,10 @@
-(function(){
-  angular.module('compass').controller('MainCtrl', ['$rootScope', "$scope", mainCtrl]);
+(function () {
+  'use strict';
 
-  function mainCtrl($rootScope, $scope) {
+  angular.module('compass').controller('mainCtrl', ['$scope', main]);
 
-    $rootScope.$on('$viewContentLoaded', function(){
-      $rootScope.preventOverflow = false;
-    });
+  function main ($scope) {
+    $scope.test = "View is talking to controller!"
   }
+
 })();

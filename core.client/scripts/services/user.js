@@ -33,16 +33,6 @@
     }
 
     function setUser(user){
-      // hack leveraging the JSON library to clone the user object. That way mixpanelUser is NOT a reference to the original user object
-      var mixpanelUser = (JSON.parse(JSON.stringify(user)));
-      delete(mixpanelUser.email);
-      delete(mixpanelUser.phone_number);
-      mixpanelUser.$email = user.email;
-      mixpanelUser.$phone = user.phone_number;
-
-      mixpanel.people.set(mixpanelUser);
-      mixpanel.identify(mixpanelUser.id);
-
       return localStorageService.set('user', user);
     }
 

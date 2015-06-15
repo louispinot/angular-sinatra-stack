@@ -22,11 +22,9 @@ end
 
 require 'factory_girl'
 Dir['./core.api/spec/factories/*.rb'].each {|file| require file}
-FactoryGirl.definition_file_paths = %w{./factories ./test/factories ./spec/factories}
-FactoryGirl.find_definitions
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-  config.include FactoryGirl::Syntax::Methods
   def app
     Sinatra::Application
   end

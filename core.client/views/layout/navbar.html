@@ -1,66 +1,14 @@
 <div ng-controller="NavbarCtrl">
 
   <!-- Navbar for "landing" layout -->
-  <div class="container" ng-show="$root.layout === 'landing'">
-    <div class="row" id="landing-navbar">
-      <div class="col-xs-2">
-        <a href="/dashboard"><img src="./assets/logo_white.png" id="landing-logo"></a>
+<!--   <div class="container" ng-show="$root.layout === 'landing'">
 
-      </div>
-      <div class="col-xs-10 custom-show hide-it ">
-        <ul class="">
-          <li class="login"><a href="/login">Login</a></li>
-        </ul>
-      </div>
-      <div class="col-md-10 col-sm-12 row">
-        <ul>
-          <li class="link"><a href="https://classic.compass.co/" target="_blank">Compass Classic</a></li>
-          <li class="link"><a href="https://monitor.compass.co/" target="_blank">Compass for Investors &amp; Advisors</a></li>
-          <li class="link"><a href="http://blog.startupcompass.co/" target="_blank">Blog &amp; Research</a></li>
-          <li class="login custom-hide"><a href="/login">Login</a></li>
-        </ul>
-      </div>
-    </div>
   </div>
-
+ -->
 
   <!-- Navbar for "application" layout -->
-  <div class="container" ng-show="$root.layout === 'application'">
-    <div class="row" id="compass-navbar">
-      <div class="col-sm-3 hidden-xs">
-        <a href="/dashboard"><img src="./assets/logo.svg" id="navbar-logo"></a>
-      </div>
-      <div class="col-md-9">
-        <ul class="nav-links">
-          <li><a href="/feedback" ng-class="{'current':currentPage('/feedback')}">Send us feedback</a></li>
-          <li><a href="/data_sources" ng-class="{'current':currentPage('/data_sources')}">Data Sources</a></li>
+<!--   <div class="container" ng-show="$root.layout === 'application'">
 
-          <div class="btn-group" dropdown is-open="status.isopen">
-            <button type="button" id="nav-select-dropdown" dropdown-toggle ng-disabled="disabled">
-              Settings <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a class="nav-dropdown-links" href="/settings">Profile</a></li>
-              <li><a class="nav-dropdown-links" href="/monetization">Survey</a></li>
-            </ul>
-          </div>
+  </div> -->
+</div>
 
-
-          <li><a href="#" ng-click="logout()">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar for "bareLogo" layout -->
-  <div class="container" ng-show="$root.layout === 'bareLogo'">
-    <img src="./assets/logo.svg" id="landing-logo">
-  </div>
-
-  <!-- Navbar for "survey" layout -->
-  <div ng-show="$root.layout === 'survey'">
-    <a href ng-click="logoRoute()"><img src="./assets/logo.svg" id="survey-logo"></a>
-    <a href="#" class="survey-logout" ng-click="logout()">Logout</a>
-  </div>
-
-</div> <!-- ng-controller -->
