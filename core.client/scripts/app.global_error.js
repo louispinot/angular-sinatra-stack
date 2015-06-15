@@ -1,15 +1,14 @@
 // (function() {
 
-//   angular.module('compass').config(['$httpProvider', function($httpProvider) {
+//   angular.module('habitac').config(['$httpProvider', function($httpProvider) {
 
-//     $httpProvider.interceptors.push(['$q', 'errorService', '$location', 'localStorageService', 'logentriesSvc', globalErrorsConfig]);
+//     $httpProvider.interceptors.push(['$q', 'errorService', '$location', 'localStorageService', globalErrorsConfig]);
 
-//     function globalErrorsConfig($q, errorService, $location, localStorageService, logentriesSvc) {
+//     function globalErrorsConfig($q, errorService, $location, localStorageService) {
 //       return {
 //         'responseError': function(response) {
 //           errorService.setErrorCode(response.status);
 //           var user = localStorageService.get('user') || null;
-//           logentriesSvc.htmlError(response, $location.path(), user);
 //           //due to circular reference I have to be explicit with $location and user
 
 //           switch (response.status) {

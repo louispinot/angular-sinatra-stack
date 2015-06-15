@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('compass') .factory('auth',['$q', '$http', 'sessionService','loginService', 'userService', auth]);
+  angular.module('habitac') .factory('auth',['$q', '$http', 'sessionService','loginService', 'userService', auth]);
 
   function auth($q, $http, sessionService, loginService, userService) {
 

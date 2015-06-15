@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('compass').controller( 'ResetCtrl', ["auth", "$routeParams",'$scope', '$location', 'alertService', "userService", reset]);
+  angular.module('habitac').controller( 'ResetCtrl', ["auth", "$routeParams",'$scope', '$location', 'alertService', "userService", reset]);
 
   function reset(auth, $routeParams, $scope, $location, alertService, userService) {
     $scope.send_reset = send_reset;

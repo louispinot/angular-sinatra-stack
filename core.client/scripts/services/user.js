@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('compass') .factory('userService', ['$resource', 'localStorageService',  user]);
+  angular.module('habitac') .factory('userService', ['$resource', 'localStorageService',  user]);
 
   function user($resource, localStorageService) {
 

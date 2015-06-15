@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('compass')
+  angular.module('habitac')
   .factory('loginService', ['$rootScope', 'sessionService', 'localStorageService', loginSvc]);
 
   function loginSvc ($rootScope, sessionService, localStorageService) {

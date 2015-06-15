@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  angular.module('compass').controller('LoginCtrl', ['$scope', '$location', "$analytics", 'auth', "userService", 'alertService', login]);
+  angular.module('habitac').controller('LoginCtrl', ['$scope', '$location', 'auth', "userService", 'alertService', login]);
 
-  function login ($scope, $location, $analytics, auth, userService, alertService) {
+  function login ($scope, $location, auth, userService, alertService) {
     $scope.authenticate = authenticate;
 
     function authenticate () {
@@ -12,7 +12,6 @@
         .then(function(isAuthenticated){
           if(isAuthenticated) {
             var user = userService.getCurrentUser();
-            $analytics.eventTrack('Login', {email: user.email});
             if(user.lifestage_state !== 'clustering_complete' && user.lifestage_state !== 'lifestage_firstHalf' && user.lifestage_state !== 'complete'){
               if(user.data_connections.length === 0 ){
                 $location.path('/connect_data_source');

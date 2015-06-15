@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('compass') .factory('errorService', [errorSvc]);
+  angular.module('habitac') .factory('errorService', [errorSvc]);
 
   function errorSvc() {
 

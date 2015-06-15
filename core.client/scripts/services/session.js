@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('compass').factory('sessionService',['$resource', 'localStorageService', sessionSvc]);
+  angular.module('habitac').factory('sessionService',['$resource', 'localStorageService', sessionSvc]);
 
   function sessionSvc ($resource, localStorageService) {
     var service = {

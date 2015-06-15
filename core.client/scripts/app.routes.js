@@ -1,5 +1,5 @@
 (function() {
-  angular.module('compass').config([
+  angular.module('habitac').config([
     '$locationProvider',
     '$routeProvider',
     function($locationProvider, $routeProvider) {

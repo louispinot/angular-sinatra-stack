@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('compass').factory('alertService', ['$rootScope', alert]);
+  angular.module('habitac').factory('alertService', ['$rootScope', alert]);
 
   function alert ($rootScope) {
 
